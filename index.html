@@ -3,101 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bolen Ummi Binong - Kelezatan Legendaris, Cerita Abadi</title>
+    <title>Kisah Ajaib Bolen Ummi Binong! 💖🍌</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8e1; /* Kuning pisang lembut */
+            color: #5d4037; /* Cokelat hangat */
             margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: #f1f1f1;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        
-        main {
-            padding: 20px;
-        }
-        
-        .banner {
-            background-color: #337ab7;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .banner h2 {
-            font-size: 1.5em;
-        }
-        
-        .sejarah {
-            margin-top: 20px;
-        }
-        
-        .galeri {
-            margin-top: 20px;
-        }
-        
-        .gambar-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        
-        .gambar-container img {
-            width: 200px;
-            height: 150px;
-            margin: 10px;
-            object-fit: cover;
+        .container {
+            width: 100%;
+            max-width: 450px; /* Ukuran tampilan HP */
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
         }
+        .ad-image {
+            width: 100%;
+            display: block;
+        }
+        /* Floating Button Container */
+        .cta-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        /* Common style for floating buttons */
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px; /* Lebar tombol melingkar */
+            height: 70px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        /* Keyframe for floating animation */
+        @keyframes floatingPulse {
+            0% { transform: translateY(0); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+            50% { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+            100% { transform: translateY(0); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        }
+        /* WA Button */
+        .wa-btn {
+            background-color: #25D366; /* Warna WA */
+            color: #fff;
+            animation: floatingPulse 3s ease-in-out infinite; /* Animasi mengambang */
+        }
+        .wa-btn i {
+            font-size: 30px;
+        }
+        /* Maps Button */
+        .maps-btn {
+            background-color: #fff;
+            border: 2px solid #5d4037;
+            animation: floatingPulse 3s ease-in-out infinite 0.5s; /* Delay sedikit agar tidak seragam */
+        }
+        .maps-btn i {
+            font-size: 30px;
+            color: #4285F4; /* Warna Google */
+        }
+        /* Icon styles (menggunakan Unicode untuk kemudahan) */
+        .icon-wa::before { content: "\f232"; font-family: "Font Awesome 5 Brands"; } /* WA Icon */
+        .icon-maps::before { content: "\f3c5"; font-family: "Font Awesome 5 Free"; font-weight: 900; } /* Maps Icon */
         
-        footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
+        /* FontAwesome for Icons (Optional: include if you can, or use unicode/images) */
+        @font-face {
+            font-family: 'Font Awesome 5 Brands';
+            src: url('https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Font Awesome 5 Free';
+            src: url('https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2') format('woff2');
+            font-weight: 900;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bolen Ummi Binong</h1>
-        <p>Kelezatan Legendaris, Cerita Abadi</p>
-    </header>
-    <main>
-        <section class="banner">
-            <h2>Nikmati Kelezatan Bolen Ummi Binong</h2>
-            <p>Gigitan pertama, langsung jatuh cinta! Bolen Ummi Binong, perpaduan sempurna kulit pastry renyah, pisang pilihan manis, dan taburan keju melimpah.</p>
-            <button onclick="pesanSekarang()">Pesan Sekarang!</button>
-        </section>
-        <section class="sejarah">
-            <h2>Sejarah Bolen Ummi Binong</h2>
-            <p>Bolen Ummi Binong terlahir dari tangan dingin Ummi Aminah, seorang ibu rumah tangga berbakat dari Kampung Binong. Berawal dari hobi membuat kue, Ummi Aminah mulai menjual Bolen buatannya.</p>
-            <p>Tahun demi tahun, Bolen Ummi Binong terus berkembang. Kini, Bolen Ummi Binong telah memiliki beberapa cabang dan menjadi salah satu oleh-oleh khas Binong.</p>
-        </section>
-        <section class="galeri">
-            <h2>Galeri Bolen Ummi Binong</h2>
-            <div class="gambar-container">
-                <img src="https://assets.kompasiana.com/items/album/2021/06/18/kue-bolen-pisang-keju-60cc3c5015251025704f76d2.jpg?t=o&v=740&x=416" alt="Bolen Ummi Binong dengan Kopi">
-                <img src="https://img-global.cpcdn.com/recipes/5e8e8f81a70014a9/680x482cq70/bolen-pisang-keju-recipe-main-photo.jpg" alt="Bolen Ummi Binong di Cafe">
-                <img src="https://static.republika.co.id/uploads/images/inpicture_slide/kue-bolen-pisang-keju-_160318182245-667.jpg" alt="Bolen Ummi Binong Segar dari Oven">
-                <img src="https://i.ytimg.com/vi/bYIe_8E4F_g/maxresdefault.jpg" alt="Bolen Ummi Binong Siap Santap">
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Bolen Ummi Binong. All rights reserved.</p>
-    </footer>
-    <script>
-        function pesanSekarang() {
-            window.location.href = "https://wa.me/6289506281510?text=Halo,%20saya%20tertarik%20memesan%20Bolen%20Ummi%20Binong!";
-        }
-    </script>
-</body>
-</html>
+    <div class="container">
+        <img src="image
+            
