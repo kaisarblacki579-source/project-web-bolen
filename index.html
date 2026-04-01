@@ -3,149 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bolen Ummi Binong | Kelezatan & Inovasi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Bolen Ummi Binong - Cita Rasa Premium</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* CSS Reset & Global Styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #fdfaf6; color: #333; line-height: 1.6; overflow-x: hidden; }
-        
-        /* Typography & Colors */
-        h1, h2, h3 { color: #8B4513; }
-        p { color: #555; margin-bottom: 15px; }
-        .highlight { color: #d35400; font-weight: 600; }
+        :root {
+            --primary-color: #d4af37; /* Gold */
+            --secondary-color: #8b4513; /* SaddleBrown */
+            --text-dark: #333;
+            --bg-light: rgba(255, 255, 255, 0.95);
+        }
 
-        /* Hero Section */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: #111;
+        }
+
+        /* Animated Cafe Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 120vw;
+            height: 120vh;
+            /* Ganti URL ini dengan gambar/gif kafe Anda */
+            background: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            z-index: -1;
+            animation: panCafe 30s infinite alternate linear;
+            filter: blur(4px) brightness(0.6);
+        }
+
+        @keyframes panCafe {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-5%, -5%) scale(1.1); }
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--bg-light);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        section {
+            padding: 50px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Headers with Bolen Icon */
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            /* Ganti dengan ikon bolen asli Anda */
+            background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&w=100&q=80');
+            background-size: cover;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Hero Banner */
         .hero {
-            text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-            border-bottom: 5px solid #8B4513; position: relative;
-        }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; }
-
-        /* Smoke Animation & Image Container */
-        .image-container {
-            position: relative; display: inline-block; margin-top: 20px;
-            border-radius: 15px; box-shadow: 0 15px 30px rgba(139, 69, 19, 0.2);
-        }
-        .image-container img {
-            width: 100%; max-width: 400px; border-radius: 15px; display: block;
-        }
-        
-        /* The Smoke Effects */
-        .smoke {
-            position: absolute; width: 30px; height: 30px; background: rgba(255, 255, 255, 0.6);
-            border-radius: 50%; filter: blur(12px); bottom: 60%; opacity: 0;
-            animation: rise 4s infinite ease-in;
-        }
-        .smoke:nth-child(1) { left: 30%; animation-delay: 0s; }
-        .smoke:nth-child(2) { left: 50%; animation-delay: 1.5s; width: 40px; height: 40px; }
-        .smoke:nth-child(3) { left: 70%; animation-delay: 0.7s; }
-
-        @keyframes rise {
-            0% { transform: translateY(0) scale(1); opacity: 0.7; }
-            50% { opacity: 0.4; }
-            100% { transform: translateY(-120px) scale(3); opacity: 0; }
+            position: relative;
+            text-align: center;
+            padding: 80px 20px;
+            /* Background Bolen di Judul Web */
+            background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1621236378699-8597faf6a176?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            border-radius: 15px 15px 0 0;
         }
 
-        /* Sections */
-        .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
-        .section-box {
-            background: white; padding: 40px; border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;
-            transform: translateY(30px); opacity: 0; transition: all 0.8s ease;
-        }
-        .section-box.visible { transform: translateY(0); opacity: 1; }
-
-        /* Buttons */
-        .btn {
-            display: inline-block; padding: 15px 30px; font-size: 1.1rem; font-weight: 600;
-            color: white; text-decoration: none; border-radius: 30px; transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2); cursor: pointer; border: none;
-        }
-        .btn-maps { background: linear-gradient(135deg, #e74c3c, #c0392b); margin-top: 20px; }
-        .btn-maps:hover { background: linear-gradient(135deg, #c0392b, #a12d22); transform: scale(1.05); }
-
-        /* Floating WhatsApp Button */
-        .wa-float {
-            position: fixed; bottom: 40px; right: 40px; background-color: #25D366;
-            color: white; width: 65px; height: 65px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 35px; text-decoration: none; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-            z-index: 9999; animation: floatSlow 4s ease-in-out infinite;
-        }
-        
-        @keyframes floatSlow {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+        .hero h1 {
+            color: var(--primary-color);
+            justify-content: center;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* SVG Icons */
-        .icon { width: 30px; height: 30px; fill: currentColor; }
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Animated Distribution Chart */
+        .chart-container {
+            margin-top: 30px;
+        }
+        .bar-wrap {
+            margin-bottom: 15px;
+        }
+        .bar-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .bar-bg {
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 25px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            border-radius: 10px;
+            width: 0; /* Animated via JS */
+            transition: width 2s ease-out;
+        }
+
+        /* Nutrition Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Floating Buttons */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            animation: floatBtn 3s infinite ease-in-out;
+        }
+
+        .fab-wa {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            animation-delay: 0s;
+        }
+
+        .fab-maps {
+            background: linear-gradient(135deg, #4285F4, #0F9D58);
+            animation-delay: 1.5s;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes floatBtn {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Address Label */
+        .contact-info {
+            background: var(--secondary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container { margin: 10px; }
+            .hero h1 { font-size: 2em; }
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>Bolen Ummi Binong</h1>
-        <p>Sensasi Hangat, Renyah di Luar, Lumer di Dalam. Mahakarya rasa dalam setiap gigitan yang tak terlupakan.</p>
-        
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bolen Ummi Binong Hangat">
-            <div class="smoke"></div>
-            <div class="smoke"></div>
-            <div class="smoke"></div>
-        </div>
-    </header>
+    <div class="bg-animation"></div>
 
-    <section class="section">
-        <div class="section-box reveal">
-            <h2>Kisah Rasa yang Melegenda</h2>
-            <p>Berawal dari dapur sederhana dan cinta seorang ibu, <span class="highlight">Bolen Ummi Binong</span> lahir untuk menyajikan kebahagiaan di meja makan Anda. Kami mempertahankan resep warisan otentik, menggunakan mentega pilihan, cokelat premium, dan keju terbaik.</p>
-            <p>Setiap lapis pastry dilipat dengan dedikasi tinggi, dipanggang hingga mencapai tingkat kerenyahan yang sempurna, memastikan sensasi hangat dan lumer menyapa lidah Anda di gigitan pertama.</p>
+    <div class="container">
+        <div class="hero">
+            <h1><div class="header-icon"></div> Bolen Ummi Binong <div class="header-icon"></div></h1>
+            <p style="text-align: center; font-size: 1.2em; font-weight: 300;">Kelezatan Pastry Tradisional dengan Sentuhan Modern</p>
         </div>
 
-        <div class="section-box reveal">
-            <h2>Di Balik Kelezatan: Sentuhan Sang Jenius</h2>
-            <p>Sebuah mahakarya rasa tidak lepas dari visi pemimpinnya. Bolen Ummi Binong dinahkodai oleh <strong>Ibrahim Kholilulloh</strong>, sosok luar biasa yang memadukan tradisi kuliner dengan kecanggihan teknologi masa depan.</p>
-            <p>Beliau bukan sekadar CEO perusahaan kuliner. Ibrahim adalah seorang inovator teknologi dan pengembang kecerdasan buatan terkemuka. Ia adalah arsitek di balik <span class="highlight">omni-genius-ai</span> dan <span class="highlight">black ai</span> — perangkat AI canggih yang merevolusi cara mesin berpikir dan berkreasi.</p>
-            <p>Bagi Ibrahim, menciptakan lapisan bolen yang sempurna dan menulis baris kode algoritma AI yang kompleks memiliki satu kesamaan: <em>keduanya membutuhkan presisi, dedikasi, dan hasrat untuk memberikan yang terbaik bagi umat manusia.</em></p>
-        </div>
+        <section id="sejarah">
+            <h2><div class="header-icon"></div> Sejarah Bolen Ummi Binong</h2>
+            <p>Berawal dari dapur kecil yang dipenuhi aroma harum mentega dan pisang pilihan, <strong>Bolen Ummi Binong</strong> lahir dari cinta dan dedikasi terhadap kuliner Nusantara. Sejarah kami bukan sekadar tentang resep, melainkan tentang warisan rasa yang terus dijaga kualitasnya dari generasi ke generasi. Setiap lapisan pastry yang renyah membungkus kehangatan isian lumer yang otentik, menjadikan Bolen Ummi Binong sebagai buah tangan kebanggaan warga Tangerang. Kami menyajikan tidak hanya kue, tetapi juga nostalgia manis di setiap gigitannya.</p>
+        </section>
 
-        <div class="section-box reveal">
-            <h2>Kunjungi Dapur Hangat Kami</h2>
-            <p>Aroma bolen segar yang baru keluar dari oven sudah menunggu Anda. Datang dan buktikan sendiri kelezatannya!</p>
-            <a href="https://share.google/Z3qjBFrbPpTbjQmzg" target="_blank" class="btn btn-maps">
-                📍 Buka Rute di Google Maps
-            </a>
-        </div>
-    </section>
+        <section id="ceo">
+            <h2><div class="header-icon"></div> CEO Visioner: Harmoni Tradisi & Teknologi</h2>
+            <p>Di balik cita rasa klasik Bolen Ummi Binong, berdiri seorang arsitek inovasi bernama <strong>Ibrahim Kholilulloh</strong>. Beliau bukanlah sosok CEO perusahaan kuliner biasa. Ibrahim adalah seorang inovator, kreator, dan pengembang kecerdasan buatan (AI) terkemuka. Sebagai otak di balik lahirnya teknologi canggih <em>Black AI</em> dan <em>Omni-Genius-AI</em>, Ibrahim membuktikan bahwa tradisi dan masa depan dapat berjalan beriringan.</p>
+            <p>Etos kerja yang sangat produktif dari dunia pemrograman ia terapkan ke dalam manajemen Bolen Ummi Binong. Mulai dari sistem operasional yang efisien hingga analisis distribusi cerdas, sentuhan teknologi Ibrahim membawa bisnis kue keluarga ini melesat menjadi industri modern tanpa kehilangan esensi rasa tradisionalnya. Bagi Ibrahim, meracik algoritma AI dan meracik adonan bolen yang sempurna membutuhkan satu hal yang sama: <strong>Ketepatan dan Dedikasi Tulus.</strong></p>
+        </section>
 
-    <a href="https://wa.me/6289506281510?text=Halo%20Bolen%20Ummi%20Binong,%20saya%20tertarik%20untuk%20memesan%20bolen%20hangatnya!" target="_blank" class="wa-float" title="Pesan via WhatsApp">
-        <svg class="icon" viewBox="0 0 24 24" style="width: 35px; height: 35px; margin-top: 5px;">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
-
-    <script>
-        // Fungsi untuk memunculkan elemen saat di-scroll
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("visible");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Panggil sekali saat halaman dimuat
-    </script>
-
-</body>
-</html>
-y
+        <section id="distribusi">
+            <h2><div class="header-icon"></div> Jaringan Distribusi di Tangerang</h2>
+            <p>Berkat manajemen logistik yang terintegrasi, Bolen Ummi Binong kini menjangkau ribuan penikmat di seluruh penjuru Tangerang setiap harinya. Berikut adalah persentase distribusi utama area kami:</p>
+            
+            <div class="chart-container" id="dist-chart">
+                <div class="bar-wrap">
+                    <div class="bar-label"><span>Karawaci & Binong</span> <span>45%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" data-width="45%"></div></div>
+                </div>
+                <div class="bar-wrap">
+                    <div class
