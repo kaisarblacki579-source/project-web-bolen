@@ -1,254 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bolen Ummi Binong - Cita Rasa Premium</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #d4af37; /* Gold */
-            --secondary-color: #8b4513; /* SaddleBrown */
-            --text-dark: #333;
-            --bg-light: rgba(255, 255, 255, 0.95);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            overflow-x: hidden;
-            background-color: #111;
-        }
-
-        /* Animated Cafe Background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 120vw;
-            height: 120vh;
-            /* Ganti URL ini dengan gambar/gif kafe Anda */
-            background: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            z-index: -1;
-            animation: panCafe 30s infinite alternate linear;
-            filter: blur(4px) brightness(0.6);
-        }
-
-        @keyframes panCafe {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-5%, -5%) scale(1.1); }
-        }
-
-        /* Container & Sections */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: var(--bg-light);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            overflow: hidden;
-        }
-
-        section {
-            padding: 50px 40px;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* Headers with Bolen Icon */
-        h1, h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary-color);
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .header-icon {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 50%;
-            /* Ganti dengan ikon bolen asli Anda */
-            background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&w=100&q=80');
-            background-size: cover;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        /* Hero Banner */
-        .hero {
-            position: relative;
-            text-align: center;
-            padding: 80px 20px;
-            /* Background Bolen di Judul Web */
-            background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1621236378699-8597faf6a176?auto=format&fit=crop&w=1200&q=80') center/cover;
-            color: white;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .hero h1 {
-            color: var(--primary-color);
-            justify-content: center;
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        /* Animated Distribution Chart */
-        .chart-container {
-            margin-top: 30px;
-        }
-        .bar-wrap {
-            margin-bottom: 15px;
-        }
-        .bar-label {
-            font-weight: 600;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .bar-bg {
-            width: 100%;
-            background: #e0e0e0;
-            border-radius: 10px;
-            height: 25px;
-            overflow: hidden;
-        }
-        .bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-            border-radius: 10px;
-            width: 0; /* Animated via JS */
-            transition: width 2s ease-out;
-        }
-
-        /* Nutrition Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        /* Floating Buttons */
-        .fab-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 999;
-        }
-
-        .fab {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 28px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-            animation: floatBtn 3s infinite ease-in-out;
-        }
-
-        .fab-wa {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            animation-delay: 0s;
-        }
-
-        .fab-maps {
-            background: linear-gradient(135deg, #4285F4, #0F9D58);
-            animation-delay: 1.5s;
-        }
-
-        .fab:hover {
-            transform: scale(1.1);
-        }
-
-        @keyframes floatBtn {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        /* Address Label */
-        .contact-info {
-            background: var(--secondary-color);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .contact-info i {
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .container { margin: 10px; }
-            .hero h1 { font-size: 2em; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bolen Ummi Binong - Kelezatan Legendaris, Cerita Abadi</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="bg-animation"></div>
-
-    <div class="container">
-        <div class="hero">
-            <h1><div class="header-icon"></div> Bolen Ummi Binong <div class="header-icon"></div></h1>
-            <p style="text-align: center; font-size: 1.2em; font-weight: 300;">Kelezatan Pastry Tradisional dengan Sentuhan Modern</p>
+<header>
+    <h1>Bolen Ummi Binong</h1>
+    <p>Kelezatan Legendaris, Cerita Abadi</p>
+</header>
+<main>
+    <section class="banner">
+        <h2>Nikmati Kelezatan Bolen Ummi Binong</h2>
+        <p>Gigitan pertama, langsung jatuh cinta! Bolen Ummi Binong, perpaduan sempurna kulit pastry renyah, pisang pilihan manis, dan taburan keju melimpah.</p>
+        <button onclick="pesanSekarang()">Pesan Sekarang!</button>
+    </section>
+    <section class="sejarah">
+        <h2>Sejarah Bolen Ummi Binong</h2>
+        <p>Bolen Ummi Binong terlahir dari tangan dingin Ummi Aminah, seorang ibu rumah tangga berbakat dari Kampung Binong. Berawal dari hobi membuat kue, Ummi Aminah mulai menjual Bolen buatannya ke tetangga dan kerabat terdekat. Kelezatannya yang tak tertandingi membuat Bolen Ummi Binong cepat populer.</p>
+        <p>Tahun demi tahun, Bolen Ummi Binong terus berkembang. Kini, Bolen Ummi Binong telah memiliki beberapa cabang dan menjadi salah satu oleh-oleh khas Binong.</p>
+    </section>
+    <section class="galeri">
+        <h2>Galeri Bolen Ummi Binong</h2>
+        <div class="gambar-container">
+            <img src="https://assets.kompasiana.com/items/album/2021/06/18/kue-bolen-pisang-keju-60cc3c5015251025704f76d2.jpg?t=o&v=740&x=416" alt="Bolen Ummi Binong dengan Kopi">
+            <img src="https://img-global.cpcdn.com/recipes/5e8e8f81a70014a9/680x482cq70/bolen-pisang-keju-recipe-main-photo.jpg" alt="Bolen Ummi Binong di Cafe">
+            <img src="https://static.republika.co.id/uploads/images/inpicture_slide/kue-bolen-pisang-keju-_160318182245-667.jpg" alt="Bolen Ummi Binong Segar dari Oven">
+            <img src="https://i.ytimg.com/vi/bYIe_8E4F_g/maxresdefault.jpg" alt="Bolen Ummi Binong Siap Santap">
         </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Bolen Ummi Binong. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-        <section id="sejarah">
-            <h2><div class="header-icon"></div> Sejarah Bolen Ummi Binong</h2>
-            <p>Berawal dari dapur kecil yang dipenuhi aroma harum mentega dan pisang pilihan, <strong>Bolen Ummi Binong</strong> lahir dari cinta dan dedikasi terhadap kuliner Nusantara. Sejarah kami bukan sekadar tentang resep, melainkan tentang warisan rasa yang terus dijaga kualitasnya dari generasi ke generasi. Setiap lapisan pastry yang renyah membungkus kehangatan isian lumer yang otentik, menjadikan Bolen Ummi Binong sebagai buah tangan kebanggaan warga Tangerang. Kami menyajikan tidak hanya kue, tetapi juga nostalgia manis di setiap gigitannya.</p>
-        </section>
+header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
 
-        <section id="ceo">
-            <h2><div class="header-icon"></div> CEO Visioner: Harmoni Tradisi & Teknologi</h2>
-            <p>Di balik cita rasa klasik Bolen Ummi Binong, berdiri seorang arsitek inovasi bernama <strong>Ibrahim Kholilulloh</strong>. Beliau bukanlah sosok CEO perusahaan kuliner biasa. Ibrahim adalah seorang inovator, kreator, dan pengembang kecerdasan buatan (AI) terkemuka. Sebagai otak di balik lahirnya teknologi canggih <em>Black AI</em> dan <em>Omni-Genius-AI</em>, Ibrahim membuktikan bahwa tradisi dan masa depan dapat berjalan beriringan.</p>
-            <p>Etos kerja yang sangat produktif dari dunia pemrograman ia terapkan ke dalam manajemen Bolen Ummi Binong. Mulai dari sistem operasional yang efisien hingga analisis distribusi cerdas, sentuhan teknologi Ibrahim membawa bisnis kue keluarga ini melesat menjadi industri modern tanpa kehilangan esensi rasa tradisionalnya. Bagi Ibrahim, meracik algoritma AI dan meracik adonan bolen yang sempurna membutuhkan satu hal yang sama: <strong>Ketepatan dan Dedikasi Tulus.</strong></p>
-        </section>
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
 
-        <section id="distribusi">
-            <h2><div class="header-icon"></div> Jaringan Distribusi di Tangerang</h2>
-            <p>Berkat manajemen logistik yang terintegrasi, Bolen Ummi Binong kini menjangkau ribuan penikmat di seluruh penjuru Tangerang setiap harinya. Berikut adalah persentase distribusi utama area kami:</p>
-            
-            <div class="chart-container" id="dist-chart">
-                <div class="bar-wrap">
-                    <div class="bar-label"><span>Karawaci & Binong</span> <span>45%</span></div>
-                    <div class="bar-bg"><div class="bar-fill" data-width="45%"></div></div>
-                </div>
-                <div class="bar-wrap">
-                    <div class
+main {
+    padding: 20px;
+}
+
+.banner {
+    background-color: #337ab7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.banner h2 {
+    font-size: 1.5em;
+}
+
+.sejarah {
+    margin-top: 20px;
+}
+
+.galeri {
+    margin-top: 20px;
+}
+
+.gambar-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gambar-container img {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+    
+</html>
+function pesanSekarang() {
+    window.location.href = "https://wa.me/6289506281510?text=Halo,%20saya%20tertarik%20memesan%20Bolen%20Ummi%20Binong!";
+}
