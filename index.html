@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisah Ajaib Bolen Ummi Binong! 💖🍌</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8e1; /* Kuning pisang lembut */
+            color: #5d4037; /* Cokelat hangat */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px; /* Ukuran tampilan HP */
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .ad-image {
+            width: 100%;
+            display: block;
+        }
+        /* Floating Button Container */
+        .cta-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        /* Common style for floating buttons */
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px; /* Lebar tombol melingkar */
+            height: 70px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        /* Keyframe for floating animation */
+        @keyframes floatingPulse {
+            0% { transform: translateY(0); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+            50% { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+            100% { transform: translateY(0); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        }
+        /* WA Button */
+        .wa-btn {
+            background-color: #25D366; /* Warna WA */
+            color: #fff;
+            animation: floatingPulse 3s ease-in-out infinite; /* Animasi mengambang */
+        }
+        .wa-btn i {
+            font-size: 30px;
+        }
+        /* Maps Button */
+        .maps-btn {
+            background-color: #fff;
+            border: 2px solid #5d4037;
+            animation: floatingPulse 3s ease-in-out infinite 0.5s; /* Delay sedikit agar tidak seragam */
+        }
+        .maps-btn i {
+            font-size: 30px;
+            color: #4285F4; /* Warna Google */
+        }
+        /* Icon styles (menggunakan Unicode untuk kemudahan) */
+        .icon-wa::before { content: "\f232"; font-family: "Font Awesome 5 Brands"; } /* WA Icon */
+        .icon-maps::before { content: "\f3c5"; font-family: "Font Awesome 5 Free"; font-weight: 900; } /* Maps Icon */
+        
+        /* FontAwesome for Icons (Optional: include if you can, or use unicode/images) */
+        @font-face {
+            font-family: 'Font Awesome 5 Brands';
+            src: url('https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Font Awesome 5 Free';
+            src: url('https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2') format('woff2');
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="image_3.png" alt="Iklan Bolen Ummi Binong Lengkap" class="ad-image">
+        
+        <div class="cta-container">
+            <a href="https://wa.me/6289506281510" target="_blank" class="floating-btn wa-btn">
+                <i class="icon-wa"></i>
+            </a>
+            <a href="https://share.google/Z3qjBFrbPpTbjQmzg" target="_blank" class="floating-btn maps-btn">
+                <i class="icon-maps"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+
